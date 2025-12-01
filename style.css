@@ -1,0 +1,389 @@
+body {
+    margin: 0;
+    font-family: "Press Start 2P", sans-serif;
+  
+    background: url("assets/mario bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+  
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sidebar (Mario block style) */
+  .sidebar {
+    width: 230px;
+    background: #f4a300;
+    padding: 25px;
+    color: #4a2c06;
+    border-right: 6px solid #b36b00;
+    border-radius: 0 20px 20px 0;
+    box-shadow: inset 0 0 10px #c98200;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 18px;
+    text-shadow: 2px 2px #ffe79a;
+  }
+  
+  .sidebar p {
+    font-size: 14px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .sidebar p:hover {
+    color: white;
+    transform: translateX(8px);
+  }
+  
+  .main {
+    flex: 1;
+    padding: 40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  /* Mario Card */
+  .card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 480px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    border: 4px solid #ff0000;
+    text-align: center;
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    color: #d00000;
+    text-shadow: 2px 2px #ffcdcd;
+  }
+  
+  .card p {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  
+  /* Mario START Button */
+  .start-btn {
+    background: #ff0000;
+    color: white;
+    border: 3px solid #b30000;
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 8px 0 #7a0000;
+  }
+  
+  .start-btn:hover {
+    background: #ff4d4d;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 0 #7a0000;
+  }
+  
+  .start-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #7a0000;
+  }
+  
+  .mario-icon {
+    font-size: 20px;
+    margin-left: 12px;
+  }
+  
+  /* Popup Background */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Popup Box */
+  .popup-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    font-family: "Press Start 2P", sans-serif;
+  }
+  
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+  }
+  
+  .date-box {
+    width: 90px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-family: "Press Start 2P", sans-serif;
+  }
+  .loc-box {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-family: "Press Start 2P", sans-serif;
+  }
+  
+  /* Submit buttons */
+  .submit-btn {
+    padding: 10px 20px;
+    background: #ff5b5b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Press Start 2P", sans-serif;
+  }
+  
+  .submit-btn.secondary {
+    background: #888;
+  }
+  .icon-dashboard {
+    text-align: center;
+    margin-top: 0; /* reduce space above the icons */
+    color: #ff0000;
+    position: relative;
+    top: -40px; /* moves the icons 40px higher */
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* more space between icons */
+    margin-top: 10px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 100px; /* bigger icons */
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.icon-item:hover {
+    transform: scale(1.3); /* slightly larger on hover */
+    color: #ff5b5b;
+}
+
+.icon-item p {
+    margin-top: 12px;
+    font-size: 16px; /* slightly bigger text */
+}
+
+
+  .screen {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .messages-box {
+    background: #fff;
+    border: 3px solid #ff0000;
+    border-radius: 12px;
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.8; /* added for more space between lines */
+}
+
+#message-text {
+    margin: 0;
+    line-height: 1.8; /* ensures spacing inside the message text */
+}
+  
+  .back-btn {
+    padding: 10px 20px;
+    font-family: "Press Start 2P", sans-serif;
+    background: #ff5b5b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .back-btn:hover {
+    background: #ff7b7b;
+  }
+  
+  .messages-box {
+    background: #fff;
+    border: 3px solid #ff0000;
+    border-radius: 12px;
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .nav-btn {
+    padding: 10px 15px;
+    font-family: "Press Start 2P", sans-serif;
+    background: #ff5b5b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    background: #ff7b7b;
+  }
+  .music-card {
+    background: #fff;
+    border: 4px solid #ff0000;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  #spotify-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  #spotify-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #ffdddd;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Press Start 2P", sans-serif;
+    transition: 0.2s;
+  }
+  
+  #spotify-list li:hover {
+    background: #ffbbbb;
+  }
+  
+  #spotify-player {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .time-card {
+    background: #fff;
+    border: 4px solid #ff0000;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-size: 18px;
+    font-family: "Press Start 2P", sans-serif;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  #message-text {
+    border-right: 2px solid #ff0000; /* cursor line */
+    padding-right: 5px;
+    white-space: pre-wrap; /* preserves line breaks */
+    overflow-wrap: break-word;
+    font-family: "Press Start 2P", sans-serif;
+}
+.messages-btns {
+    display:block;
+    justify-content: space-between; /* spreads buttons evenly inside the card */
+    flex-wrap: wrap; /* wraps buttons if card is small */
+    gap: 10px;
+    max-width: 100%; /* make sure it stays within the card */
+    margin: 0 auto;
+    padding-top: 10px;
+    
+  }
+  
+  /* Full-screen star container */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* so clicks pass through */
+    background: transparent;
+    z-index: 0; /* behind all content */
+  }
+  
+  /* Generate multiple stars using pseudo-elements */
+  .stars::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    box-shadow: 
+      50px 80px white,
+      150px 120px white,
+      200px 50px white,
+      300px 200px white,
+      400px 100px white,
+      500px 180px white,
+      600px 60px white,
+      700px 140px white,
+      800px 90px white,
+      900px 220px white;
+      box-shadow:
+  50px 80px white,
+  150px 120px white,
+  200px 50px white,
+  300px 200px white,
+  400px 100px white,
+  500px 180px white,
+  600px 60px white,
+  700px 140px white,
+  800px 90px white,
+  900px 220px white,
+  1200px 150px white;
+
+    animation: twinkle 2s infinite alternate;
+  }
+
+  .stars1::after { animation: twinkle 2s infinite alternate; }
+.stars2::after { animation: twinkle 3s infinite alternate; }
+
+  
+  /* Twinkle animation */
+  @keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+  

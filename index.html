@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mario Dashboard</title>
+
+  <!-- Mario Retro Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="stars"></div>
+  <div class="main" style="text-align:center">
+    <div class="card">
+      <h2>Hi Mahal!💗</h2>
+      <p>I made this just for you! Wanna play?</p>
+
+      <button class="start-btn" id="startBtn">
+        START <span class="mario-icon">🍄</span>
+      </button>
+
+      <div id="anniversary-popup" class="popup-overlay" aria-hidden="true">
+        <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+          <h3 id="popup-title">💗 What is our anniversary date?</h3>
+
+          <div class="input-row">
+            <input inputmode="numeric" maxlength="2" id="mm" class="date-box" placeholder="MM" aria-label="month">
+            <input inputmode="numeric" maxlength="2" id="dd" class="date-box" placeholder="DD" aria-label="day">
+            <input inputmode="numeric" maxlength="4" id="yyyy" class="date-box" placeholder="YYYY" aria-label="year">
+          </div>
+
+          <div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
+            <button class="submit-btn" id="submitBtn">Submit</button>
+            <button class="submit-btn secondary" id="cancelBtn">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <div id="location-popup" class="popup-overlay" aria-hidden="true">
+        <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="location-title">
+          <h3 id="location-title">📍 Where did we meet?</h3>
+      
+          <input type="text" id="location-input" class="loc-box" placeholder="Type here..." aria-label="location">
+      
+          <div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
+            <button class="submit-btn" id="location-submit">Submit</button>
+            <button class="submit-btn secondary" id="location-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="icon-dashboard" class="icon-dashboard" style="display:none;">
+        <div class="icon-row" style="margin:bottom 100px">
+          <div class="icon-item" id="message-icon">
+            📩
+            <p style="color:antiquewhite">Messages</p>
+          </div>
+          <div class="icon-item" id="music-icon">
+            🎵
+            <p style="color:antiquewhite">Music</p>
+          </div>
+          <div class="icon-item" id="time-icon">⏰
+          <p style="color:antiquewhite">Time</p></div>
+          <!-- <div class="icon-item" id="gallery-icon">
+            📸
+            <p>Gallery</p>
+          </div> -->
+        </div>
+      </div>
+      <div id="messages-screen" class="screen" style="display:none; text-align:center;">
+        <h2>💌 Messages</h2>
+      
+        <div class="messages-box">
+          <p id="message-text"></p>
+        </div>
+      
+        <div class="messages-btns">
+          <button class="back-btn">Back to Dashboard</button>
+          <button class="nav-btn" style="font-size: 20px; font-weight:bolder" id="prev-msg">←</button>
+          <button class="nav-btn" style="font-size: 20px"id="next-msg">→</button>
+        </div>
+      </div>
+      
+      <div id="music-screen" class="screen" style="display:none; text-align:center;">
+        <h2>🎵 Music Player</h2>
+      
+        <div class="music-card">
+          <ul id="spotify-list">
+            <li data-spotify="https://open.spotify.com/embed/track/1fzAuUVbzlhZ1lJAx9PtY6">TRACK 1</li>
+            <li data-spotify="https://open.spotify.com/embed/track/6OxnToSgslbtjJuNSKSdDQ">TRACK 2</li>
+            <li data-spotify="https://open.spotify.com/embed/track/3AJwUDP919kvQ9QcozQPxg">TRACK 3</li>
+            <li data-spotify="https://open.spotify.com/embed/track/6uzwOtmPDtLzP3UhTkJ2Im">TRACK 4</li>
+            <li data-spotify="https://open.spotify.com/embed/track/5wWkbQ18TPaWq2GeJDF2O3">TRACK 5</li>
+          </ul>
+      
+          <iframe id="spotify-player" src="" width="300" height="80" frameborder="0"
+            allowtransparency="true" allow="encrypted-media" style="border-radius:12px;"></iframe>
+        </div>
+      
+        <button class="back-btn">Back to Dashboard</button>
+      </div>
+      <div id="time-screen" class="screen" style="display:none; text-align:center;">
+        <h2>⏰ Time Since Anniversary</h2>
+        <div class="time-card">
+          <p id="time-since">Calculating...</p>
+        </div>
+        <button class="back-btn">Back to Dashboard</button>
+      </div>
+  </div>
+
+  <!-- Link JS -->
+  <script src="scripts.js"></script>
+  </div>
+</body>
+</html>
