@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeSince = document.getElementById("time-since");
     let timeInterval;
   
-    const anniversaryDate = new Date(1990, 0, 1); // January 1, 1990
+    const anniversaryDate = new Date(2024, 11, 2); 
   
     function updateTime() {
       const now = new Date();
